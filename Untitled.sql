@@ -69,19 +69,27 @@ describe Orders;
                                      SELECT OPERATIONS-:
 */
 
-##This query select all the name from the CustomerTable.
+##This query select all the name from the CustomerTable-:
 select Custname 
 from Customers;
-##This query selects all the name where address is equal to France from the Customer Table.
+##This query selects all the name where address is equal to France from the Customer Table-:
 select Custname
 from Customers
 where Address = "France";
-##This query selects all the OrderName along with their price using where condition.
+##This query selects all the OrderName along with their price using where condition-:
 select OrderName , OrderPrice 
 from Orders 
 where OrderName = "watch"
 and
 OrderPrice = 20000;
+##This query selects all the tuple which have attribute OrderName and OrderPrice where date is equal to "2021-07-12"-:
+select OrderName , OrderPrice 
+from orders
+where OrderDate = "2020-07-12";
+##This query uses alias for cutomer and order table and returns value using the condition C.OrderID = O.OrderId-:
+select C.CustName,C.Address,C.OrderId,O.OrderId
+from Customers C , Orders O
+where c.OrderId = O.OrderId;
 
 
 
