@@ -100,6 +100,14 @@ where c.OrderId = O.OrderId;
 select*from orders
 where OrderPrice > 30000;
 
+/* This query returns the tuples using the where clause where it uses two conditions for returning tuples-: */
+select o.orderName , o.orderId , c.CustName , c.Address ,c.OrderId
+from orders o , customers c
+where c.CustName = "John"
+and c.OrderId = o.OrderId;
+
+
+
 
 
 
