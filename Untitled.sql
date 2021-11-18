@@ -106,6 +106,37 @@ from orders o , customers c
 where c.CustName = "John"
 and c.OrderId = o.OrderId;
 
+/* This query uses another subquery in the where clause and returns only one Row where Customer.OrderId = Orders.OrderId -: */
+select * from Customers c
+where c.OrderId =
+(
+select o.OrderId                              /* Subquery part */
+from Orders o
+where OrderName = "GameBox"
+);
+
+/* This query returns one row and uses subquery inorder to return the value -: */
+select c.CustName , c.CustDob 
+from Customers c
+where c.CustName = 
+(
+select C.CustName
+from Customers C
+where C.CustName = "Paul"
+);
+
+/* This query uses another subquery and returns one row using the subquery */
+select* 
+from Customers c
+where c.OrderId =
+(
+select O.OrderId 
+from Orders O
+where O.OrderName = "Speaker"
+)
+
+
+
 
 
 
