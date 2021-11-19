@@ -133,7 +133,16 @@ where c.OrderId =
 select O.OrderId 
 from Orders O
 where O.OrderName = "Speaker"
-)
+);
+
+/* This is a simple query that returns two tuples using the Address condition -: */
+select*
+from Customers
+where Address = "France"
+or
+Address = "Spain";
+
+
 
 
 
