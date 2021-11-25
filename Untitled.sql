@@ -142,7 +142,10 @@ where Address = "France"
 or
 Address = "Spain";
 
-
+/* This query returns all the tuples from both the relation -:*/
+select*
+from Customers c , Orders o
+where c.OrderId = O.OrderId;
 
 
 
