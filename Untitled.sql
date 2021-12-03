@@ -65,8 +65,9 @@ select* from Orders;
 describe Customer;
 describe Orders;
 
-/*
+/*                                    CATEGORY - EASY
                                      SELECT OPERATIONS-:
+                                     
 */
 
 ##This query select all the name from the CustomerTable-:
@@ -146,6 +147,30 @@ Address = "Spain";
 select*
 from Customers c , Orders o
 where c.OrderId = O.OrderId;
+
+/* 
+                                                     ALTER OPERATIONS 
+              - Alter opeartions as the name suggest helps us to the alter or modify the table with some constraints.
+*/
+
+/* This alteration adds a new table to the customers table -: */
+/* To check this alteration , then run the query decsribe <TABLE NAME> -: */
+alter table Customers
+add TestColumn int;
+describe Customers;
+
+/* This alteration drops the newly added column from the table -: */
+/* To check this alteration , then run the query decsribe <TABLE NAME> -: */
+alter table Customers
+drop column TestColumn;
+describe Customers;
+
+/* This alteration adds a constraint that the table value should not be null -: */
+/* To check this alteration , then run the query decsribe <TABLE NAME> -: */
+alter table Customers
+modify CustDob date not null;
+describe Customers;
+
 
 
 
