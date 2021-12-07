@@ -151,6 +151,10 @@ where c.OrderId = O.OrderId;
 /* 
                                                      ALTER OPERATIONS 
               - Alter opeartions as the name suggest helps us to the alter or modify the table with some constraints.
+              - Three alter operations are present in sql -:
+              - 1) ADD
+              - 2) DROP
+              - 3) Modify
 */
 
 /* This alteration adds a new table to the customers table -: */
@@ -170,6 +174,49 @@ describe Customers;
 alter table Customers
 modify CustDob date not null;
 describe Customers;
+
+/*.                                                  ALTER OPERATIONS SECTION ENDED.                                                         */
+
+
+/*.                                                         CONSTRAINTS
+									- Sql constrainst as the name suggest are basically some coditions to add tuple in the attributes.
+                                    - Sql offers various types of constraint which are -:
+                                    - 1) NOT NULL
+                                    - 2) PRIMARY KEY
+                                    - 3) UNIQUE
+                                    - 4) FOREIGN KEY
+                                    - 5) CHECK
+									- 6) DEFAULT 
+                                    - 7) CREATE INDEX
+								
+*/
+
+/* This query makes sure that CustDob is noty null using Not Null constraint -: */
+alter table Customers
+modify CustDob date not null;
+
+/* This query makes sure that the order id is unique using the constraint Unique -: */
+alter table Orders
+add unique(OrderId);
+
+/* This query makes sure that the attribute is primary key uisng primary key constraint -: */
+alter Table Orders
+add primary key (OrderName);
+
+/* This query alter the attributes and makes it the foreign key using the foreign key constraint -: */
+alter table Orders
+add constraint fk_OrderId
+Foreign key (OrderId) references Customers(OrderId);
+
+/* This query alter the OrderPrice and checks whether the price is greator than 10,000 using check constraint -: */
+alter table Orders
+add check (OrderPrice >= 10000);
+
+/* This query alter the OrderPrice and sets the deafult value od OrderPrice to zero using default constraint -: */
+alter table Orders
+alter OrderPrice set default 0;
+
+
 
 
 
