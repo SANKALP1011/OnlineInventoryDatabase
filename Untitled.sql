@@ -216,6 +216,36 @@ add check (OrderPrice >= 10000);
 alter table Orders
 alter OrderPrice set default 0;
 
+/*                                                         EASY SECTION ENDED !!!                                                                      */
+
+/*                                                           MEDIUM SECTION-:                    
+															CATEGORY - MEDIUM
+                                                            
+*/
+
+/*                                                         Join Operations-:
+                                                             1)Inner Join
+                                                             2)Outer Join
+                                                             3)Right Join
+                                                             4)Left  Join
+                                                             5)Self  Join
+*/
+
+
+/* Inner join operation to join order and customer table using the following condition -: */
+select o.OrderId , o.OrderName , c.CustName , c.CustDob
+from Orders o 
+inner join Customers c on o.OrderId = c.OrderId;
+
+
+
+
+
+
+
+
+
+
 
 
 
