@@ -237,7 +237,11 @@ select o.OrderId , o.OrderName , c.CustName , c.CustDob
 from Orders o 
 inner join Customers c on o.OrderId = c.OrderId;
 
-
+/* This operation performs left join operation on order and customers table -: */
+select o.OrderName
+from Orders o
+left join Customers c
+on o.OrderId = c.OrderId;
 
 
 
